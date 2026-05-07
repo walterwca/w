@@ -37,7 +37,7 @@ fetch("https://opensheet.elk.sh/1ki6YFZemS5bg1jZu0EPQt8gI4fFoSZ4paxTcDCZ_wDY/Hoj
               </div>
 
               <div class="card-stock">
-                ${p.stock === "true" ? "En stock" : "Sin stock"}
+                ${p.stock >= "1" ? "En stock" : "Sin stock"}
               </div>
 
             </div>
