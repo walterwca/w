@@ -111,3 +111,17 @@ fetch("https://opensheet.elk.sh/1ki6YFZemS5bg1jZu0EPQt8gI4fFoSZ4paxTcDCZ_wDY/Hoj
     }
 
   });
+
+
+const btnStock = document.getElementById("btnStock");
+
+btnStock.addEventListener("click", (e) => {
+
+  e.preventDefault();
+
+  document.querySelector("#productos").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+});
