@@ -51,3 +51,63 @@ fetch("https://opensheet.elk.sh/1ki6YFZemS5bg1jZu0EPQt8gI4fFoSZ4paxTcDCZ_wDY/Hoj
     });
 
   });
+
+/*     FUNCIONES PARA MODAL DE DIGITALIZACION      */
+  const btnDigitalizacion = document.getElementById("btnDigitalizacion");
+  const modalDigitalizacion = document.getElementById("modalDigitalizacion");
+  const cerrarModalDigital = document.getElementById("cerrarModalDigital");
+
+  /* abrir */
+  btnDigitalizacion.addEventListener("click", () => {
+
+    modalDigitalizacion.style.display = "flex";
+
+  });
+
+  /* cerrar */
+  cerrarModalDigital.addEventListener("click", () => {
+
+    modalDigitalizacion.style.display = "none";
+
+  });
+
+  /* cerrar clic afuera */
+  window.addEventListener("click", (e) => {
+
+    if(e.target === modalDigitalizacion){
+
+      modalDigitalizacion.style.display = "none";
+
+    }
+
+  });
+
+/*     FUNCIONES PARA MODAL DE SERVICIOS      */
+  const btnServicios = document.getElementById("btnServicios");
+  const modalServicios = document.getElementById("modalServicios");
+  const cerrarModalServicios = document.getElementById("cerrarModalServicios");
+
+  /* abrir */
+  btnServicios.addEventListener("click", () => {
+
+    modalServicios.style.display = "flex";
+
+  });
+
+  /* cerrar */
+  cerrarModalServicios.addEventListener("click", () => {
+
+    modalServicios.style.display = "none";
+
+  });
+
+  /* cerrar clic afuera */
+  window.addEventListener("click", (e) => {
+
+    if(e.target === modalServicios){
+
+      modalServicios.style.display = "none";
+
+    }
+
+  });

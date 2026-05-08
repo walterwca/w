@@ -548,6 +548,131 @@
           align-items: center;
         }
       }
+
+    /* FONDO MODAL */
+    .modal{
+
+      display:none;
+
+      position:fixed;
+      inset:0;
+
+      background:rgba(0,0,0,.72);
+
+      backdrop-filter:blur(5px);
+
+      z-index:5000;
+
+      justify-content:center;
+      align-items:center;
+
+      padding:20px;
+    }
+
+    /* CAJA */
+    .modal-content{
+
+      position:relative;
+
+      width:100%;
+      max-width:520px;
+
+      background:#0f172a;
+
+      border:1px solid rgba(0,212,255,.2);
+
+      border-radius:28px;
+
+      padding:30px;
+
+      color:white;
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,.45);
+
+      animation:modalIn .25s ease;
+    }
+
+    /* TITULO */
+    .modal-content h2{
+
+      margin-bottom:14px;
+
+      font-size:28px;
+    }
+
+    /* TEXTO */
+    .modal-content p{
+
+      color:#d1d5db;
+      line-height:1.6;
+    }
+
+    /* BLOQUES */
+    .modal-box{
+
+      margin-top:20px;
+
+      padding:18px;
+
+      border-radius:18px;
+
+      background:rgba(255,255,255,.04);
+
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .modal-box h3{
+
+      margin-bottom:8px;
+
+      color:#00d4ff;
+    }
+
+    /* BOTÓN CERRAR */
+    .modal-close{
+
+      position:absolute;
+
+      top:16px;
+      right:16px;
+
+      width:36px;
+      height:36px;
+
+      border:none;
+      border-radius:50%;
+
+      background:rgba(255,255,255,.08);
+
+      color:white;
+
+      cursor:pointer;
+
+      transition:.2s;
+    }
+
+    .modal-close:hover{
+
+      background:rgba(255,255,255,.16);
+
+      transform:scale(1.05);
+    }
+
+    /* ANIMACIÓN */
+    @keyframes modalIn{
+
+      from{
+        opacity:0;
+        transform:translateY(20px) scale(.96);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+
+    }
   </style>
 </head>
 <body>
@@ -610,9 +735,15 @@
         <path d="M19 12l-7 7-7-7"></path>
       </svg>
       Stock inmediato
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14"></path>
+        <path d="M19 12l-7 7-7-7"></path>
+      </svg>
     </a>
 
-    <a class="ig-btn" href="#digitalizacion">
+    <!-- BOTÓN DIGITALIZACIÓN -->
+    <a class="ig-btn" href="javascript:void(0)" id="btnDigitalizacion">
+
       <!-- Escáner -->
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M6 3H4a2 2 0 0 0-2 2v2"></path>
@@ -621,20 +752,26 @@
         <path d="M18 21h2a2 2 0 0 0 2-2v-2"></path>
         <rect x="7" y="8" width="10" height="8" rx="1"></rect>
       </svg>
+
       Digitalización
+
     </a>
 
-    <a class="ig-btn" href="#servicios">
-      <!-- PC -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-        <line x1="8" y1="21" x2="16" y2="21"></line>
-        <line x1="12" y1="17" x2="12" y2="21"></line>
-      </svg>
-      Servicios PC
-    </a>
+    <!-- BOTÓN SERVICIOS -->
+      <a class="ig-btn" href="javascript:void(0)" id="btnServicios">
 
-    <a class="ig-btn" href="https://instagram.com/" target="_blank" rel="noopener">
+        <!-- PC -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+
+        Servicios PC
+
+      </a>
+
+    <a class="ig-btn" href="https://instagram.com/walterwca" target="_blank" rel="noopener">
       <!-- Instagram -->
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig-grad)" stroke-width="1.8"/>
@@ -654,303 +791,146 @@
 </header>
 
 <!-- PRODUCTS GRID -->
-<section class="products">
-
-  <!-- CARDS DESHABILITADAS, PUES AHORA ES AUTOMATICO
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <img src="img/a6s.jpg" alt="auriculares">
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Auriculares</div>
-      <div class="card-name">A6S TW</div>
-      <div class="card-desc">Auriculares inalámbricos vía bluetooth. Alta calidad de sonido, duración de hasta 2 horas. Prácticos, cómodos.</div>
-      <div class="card-footer">
-        <div class="card-price">$14.000</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
-  
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="12" y="4" width="40" height="56" rx="4" stroke="currentColor" stroke-width="2"/>
-          <rect x="20" y="12" width="24" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="32" cy="44" r="6" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Módulo WiFi</div>
-      <div class="card-name">ESP32 WROOM-32</div>
-      <div class="card-desc">SoC con WiFi + Bluetooth integrado. Doble núcleo Xtensa LX6 a 240 MHz, perfecto para IoT.</div>
-      <div class="card-footer">
-        <div class="card-price">$8.900</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
-  
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="2"/>
-          <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="32" y1="10" x2="32" y2="4" stroke="currentColor" stroke-width="2"/>
-          <line x1="32" y1="54" x2="32" y2="60" stroke="currentColor" stroke-width="2"/>
-          <line x1="10" y1="32" x2="4" y2="32" stroke="currentColor" stroke-width="2"/>
-          <line x1="54" y1="32" x2="60" y2="32" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Sensor</div>
-      <div class="card-name">Sensor DHT22</div>
-      <div class="card-desc">Sensor digital de temperatura y humedad con alta precisión. Rango -40°C a 80°C, salida calibrada.</div>
-      <div class="card-footer">
-        <div class="card-price">$3.200</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
- 
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="20" width="56" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
-          <rect x="10" y="26" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="26" y="26" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="44" y="26" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Almacenamiento</div>
-      <div class="card-name">MicroSD 32GB Clase 10</div>
-      <div class="card-desc">Tarjeta de memoria de alta velocidad. Lectura hasta 100 MB/s, compatible con cámaras y SBC.</div>
-      <div class="card-footer">
-        <div class="card-price">$7.400</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
-  
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/>
-          <rect x="12" y="20" width="40" height="24" rx="1" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 2"/>
-          <circle cx="32" cy="32" r="4" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Pantalla</div>
-      <div class="card-name">Display OLED 0.96"</div>
-      <div class="card-desc">Módulo OLED 128×64 px con interfaz I2C. Contraste excepcional, bajo consumo energético.</div>
-      <div class="card-footer">
-        <div class="card-price">$4.800</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
- 
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M32 8 L56 20 L56 44 L32 56 L8 44 L8 20 Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M32 18 L46 26 L46 38 L32 46 L18 38 L18 26 Z" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="32" cy="32" r="4" fill="currentColor" opacity="0.4"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Módulo NFC</div>
-      <div class="card-name">PN532 NFC/RFID</div>
-      <div class="card-desc">Lector/escritor NFC compatible con tarjetas Mifare. Frecuencia 13.56 MHz, interfaz SPI/I2C/UART.</div>
-      <div class="card-footer">
-        <div class="card-price">$9.200</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
- 
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="16" y="8" width="32" height="48" rx="4" stroke="currentColor" stroke-width="2"/>
-          <line x1="24" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="24" y1="28" x2="40" y2="28" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="24" y1="36" x2="34" y2="36" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="32" cy="48" r="3" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Fuente</div>
-      <div class="card-name">Regulador LM7805</div>
-      <div class="card-desc">Regulador de tensión lineal 5V / 1A. Protección térmica integrada, encapsulado TO-220.</div>
-      <div class="card-footer">
-        <div class="card-price">$950</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
- 
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="24" width="48" height="16" rx="8" stroke="currentColor" stroke-width="2"/>
-          <circle cx="22" cy="32" r="5" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="42" cy="32" r="5" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="27" y1="32" x2="37" y2="32" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Conectividad</div>
-      <div class="card-name">Módulo Bluetooth HC-05</div>
-      <div class="card-desc">Módulo Bluetooth 2.0 SPP para comunicación serial inalámbrica. Alcance hasta 10 metros.</div>
-      <div class="card-footer">
-        <div class="card-price">$5.600</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
-  
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="44" height="44" rx="4" stroke="currentColor" stroke-width="2"/>
-          <rect x="18" y="18" width="28" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="32" y1="10" x2="32" y2="18" stroke="currentColor" stroke-width="2"/>
-          <line x1="32" y1="46" x2="32" y2="54" stroke="currentColor" stroke-width="2"/>
-          <line x1="10" y1="32" x2="18" y2="32" stroke="currentColor" stroke-width="2"/>
-          <line x1="46" y1="32" x2="54" y2="32" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Procesador</div>
-      <div class="card-name">Raspberry Pi Zero 2W</div>
-      <div class="card-desc">Mini SBC con CPU quad-core Cortex-A53 64-bit a 1 GHz y 512 MB RAM. WiFi y Bluetooth integrados.</div>
-      <div class="card-footer">
-        <div class="card-price">$22.000</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
- 
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M32 12 C20 12 12 20 12 32 C12 44 20 52 32 52" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M32 20 C24 20 20 25 20 32 C20 39 24 44 32 44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M32 12 C44 12 52 20 52 32 C52 44 44 52 32 52" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 2"/>
-          <circle cx="32" cy="32" r="3" fill="currentColor" opacity="0.5"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Sensor</div>
-      <div class="card-name">Sensor Ultrasónico HC-SR04</div>
-      <div class="card-desc">Módulo de detección de distancia por ultrasonido. Rango 2 cm – 4 m, precisión ±3 mm.</div>
-      <div class="card-footer">
-        <div class="card-price">$2.100</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
- 
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="16" width="48" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
-          <line x1="18" y1="24" x2="18" y2="40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="26" y1="28" x2="26" y2="40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="34" y1="22" x2="34" y2="40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="42" y1="30" x2="42" y2="40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Audio</div>
-      <div class="card-name">Amplificador PAM8403</div>
-      <div class="card-desc">Mini amplificador estéreo clase D, 3W+3W. Eficiencia del 90%, alimentación 5V USB.</div>
-      <div class="card-footer">
-        <div class="card-price">$1.800</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
-
- 
-  <article class="card">
-    <div class="card-img-wrap">
-      <div class="placeholder-img">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="4" width="24" height="40" rx="3" stroke="currentColor" stroke-width="2"/>
-          <rect x="26" y="10" width="12" height="20" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="20" y1="52" x2="12" y2="60" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="44" y1="52" x2="52" y2="60" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="28" y1="44" x2="28" y2="52" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="36" y1="44" x2="36" y2="52" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <span>IMG</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tag">Cámara</div>
-      <div class="card-name">Módulo Cámara OV2640</div>
-      <div class="card-desc">Cámara CMOS 2MP con soporte JPEG. Compatible con ESP32-CAM, ideal para visión artificial y streaming.</div>
-      <div class="card-footer">
-        <div class="card-price">$6.700</div>
-        <div class="card-stock">En stock</div>
-      </div>
-    </div>
-  </article>
--->
-</section>
+<section class="products"></section>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2025 <span>W DIGITAL</span> — Todos los derechos reservados</p>
 </footer>
+
+<!-- MODAL DIGITALIZACIÓN -->
+<div id="modalDigitalizacion" class="modal">
+
+  <div class="modal-content">
+
+    <!-- cerrar -->
+    <button class="modal-close" id="cerrarModalDigital">
+      ✕
+    </button>
+
+    <h2>📼 Digitalización y Restauración</h2>
+
+    <p>
+      Convertimos tus recuerdos físicos a formatos digitales modernos.
+    </p>
+
+    <div class="modal-box">
+
+      <h3>🎞 VHS a Digital</h3>
+
+      <p>
+        Pasamos videos VHS, VHS-C y otras cintas a formatos digitales
+        compatibles con PC, celulares y Smart TV.
+      </p>
+
+    </div>
+
+    <div class="modal-box">
+
+      <h3>📷 Restauración de Fotos</h3>
+
+      <p>
+        Mejoramos fotografías antiguas, dañadas o borrosas y las
+        digitalizamos con mejor calidad y preservación.
+      </p>
+
+    </div>
+
+    <div class="modal-box">
+
+      <h3>💾 Entrega Digital</h3>
+
+      <p>
+        Entregamos el material en pendrive, nube o formato digital
+        listo para compartir y guardar.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- MODAL SERVICIOS PC -->
+<div id="modalServicios" class="modal">
+
+  <div class="modal-content">
+
+    <!-- cerrar -->
+    <button class="modal-close" id="cerrarModalServicios">
+      ✕
+    </button>
+
+    <h2>🖥 Servicios PC & Soluciones Digitales</h2>
+
+    <p>
+      Soluciones tecnológicas personalizadas para hogares,
+      estudiantes, oficinas y emprendimientos.
+    </p>
+
+    <!-- ARMADO -->
+    <div class="modal-box">
+
+      <h3>⚙ Armado de PC Personalizadas</h3>
+
+      <p>
+        Armamos computadoras completas según tus necesidades:
+        oficina, estudio, gaming, edición, streaming o uso profesional.
+        Equipos totalmente personalizados y optimizados.
+      </p>
+
+    </div>
+
+    <!-- SOFTWARE -->
+    <div class="modal-box">
+
+      <h3>💿 Instalación de Sistemas y Programas</h3>
+
+      <p>
+        Instalación de Windows, drivers, programas esenciales,
+        optimización inicial y configuración general del equipo.
+      </p>
+
+    </div>
+
+    <!-- REPARACIÓN -->
+    <div class="modal-box">
+
+      <h3>🛠 Reparación y Optimización</h3>
+
+      <p>
+        Diagnóstico, limpieza, mejora de rendimiento,
+        actualización de hardware y solución de problemas.
+      </p>
+
+    </div>
+
+    <!-- ASESORAMIENTO -->
+    <div class="modal-box">
+
+      <h3>📋 Asesoramiento General</h3>
+
+      <p>
+        Ayuda y recomendaciones para compras,
+        upgrades, componentes y soluciones tecnológicas.
+      </p>
+
+    </div>
+
+    <!-- DESARROLLO -->
+    <div class="modal-box">
+
+      <h3>🌐 Sistemas y Diseño Web</h3>
+
+      <p>
+        Desarrollo de pequeños sistemas de gestión,
+        automatizaciones y diseño de páginas web modernas y responsivas.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
 <script src="script.js"></script>
 </body>
 </html>
